@@ -15,8 +15,7 @@ while True:
         print(f'Ты угадал загаданное число с {count} попытки.\nСпасибо за игру!!!')
         continuation = input('Хочешь продолжить?\n')
         if continuation == 'да':
-            a = randint(1, 100)
-            count = 0
+            print('А все, я устал.')
         else:
             print('Жаль, а так хорошо играли.')
         break
