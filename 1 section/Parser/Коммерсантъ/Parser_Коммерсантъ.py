@@ -7,7 +7,7 @@ a = urllib.request.urlopen('https://www.kommersant.ru/?from=logo')
 html = a.read()  # Читаем ссылку
 soup = BeautifulSoup(html, "html.parser")
 
-# Вставляю нужный мне блок с новостями
+# Вставляю нужный блок с новостями
 news = soup.find_all('div', class_='multimedia__item slider-item slider-multimedia-resizable-item')
 results = []
 
@@ -25,6 +25,6 @@ file = open('Коммерсантъ.txt', 'w', encoding='utf-8')
 for i in results:
     file.write(f"Новость: {i['heading']}\n"
                f"Описание: {i['text']}\n\n"
-               f"Ссылка: {i['href']}\n"
+               f"Ссылка: https://www.kommersant.ru{i['href']}\n"
                f"******************************\n\n")
 file.close()
